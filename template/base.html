@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>发点消息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Jared Ye">
+</head>
+
+<body>
+
+    <form action="{{ url_for("send_message") }}" method="POST">
+        要发布的内容:<input type="text" name="msg">
+        <input type="submit">
+</form>
+</body>
+</html>
