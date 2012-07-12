@@ -1,13 +1,48 @@
 {% extends "layout.html" %}
-
+{% block javascript %}
+    <script type="text/javascript">
+        $("tr input").blur(function(){
+            $.post("{{ url_for('contacts.edit') }}",{
+                id:$(this).parent().parent().attr('id'),
+                address: $(this).parent().parent().find(".address").val(),
+                tel: $(this).parent().parent().find(".tel").val()
+            }, function(){
+//                alert("修改成功");
+            });
+        });
+    </script>
+{% endblock %}
 {% block main %}
     <div class="hero-unit">
+
         <h1>
             通讯录
         </h1>
+
         <p>
             大家常联系
         </p>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>大名</th>
+                <th>通讯地址</th>
+                <th>手机</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+
+                <tr id='{{ user.id }}'>
+                    <td class="di">{{ user.name }}</td>
+                    <td><input type="text" class="address" value="{{ user.address or ""}}"></td>
+                    <td><input type="text" class="tel" value="{{ user.tel or ""}}"></td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+
     </div>
 
 {% endblock %}

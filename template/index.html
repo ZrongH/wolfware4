@@ -1,2 +1,25 @@
 {% extends "layout.html" %}
 
+{% block main %}
+
+    <div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <h1>发班级微博</h1>
+                    <form action="{{ url_for("send_message") }}" method="POST">
+                        要发布到<a href="http://weibo.com/u/2893236202">班级weibo</a>的内容:<input type="text" name="msg">
+                        <input type="submit" class="btn">
+                    </form>
+                </div>
+                <div class="offset1 span3 well">
+                    <h2><a href="{{ url_for("contacts.index") }}">狼人通讯录</a></h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from mongoengine.connection import connect
-from mongoengine.django.auth import User
 from mongoengine.document import Document
 from mongoengine.fields import IntField, StringField, ReferenceField
 
@@ -13,11 +12,26 @@ class Code(Document):
     expires_in = IntField()
     code = StringField()
 
-class Users(Document):
+class User(Document):
     name = StringField()
     student_id = IntField()
-
-class Contact(Document):
-    user = ReferenceField(User)
     address = StringField()
     tel = StringField()
+
+def get_unicode(str):
+    if isinstance(str, unicode):
+        return str
+    for c in ('utf8', 'gbk'):
+        return str.decode(c)
+    return str
+
+def load_data():
+    for line in open('init_data/students', 'r'):
+        student_id, name = line.split(",")
+        User.objects.insert(User(name = get_unicode(name), student_id=get_unicode(student_id)))
+
+if not User.objects().count():
+    load_data()
+
+
+

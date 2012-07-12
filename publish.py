@@ -17,7 +17,7 @@ GET_URL = True
 def publish(msg):
 
 
-    print msg
+#    print msg
     #print url
     code_obj = Code.objects.first()
     client = APIClient(app_key=APP_KEY, app_secret=APP_SECRET, redirect_uri=CALLBACK_URL)
