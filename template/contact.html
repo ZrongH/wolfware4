@@ -7,13 +7,17 @@
                 address: $(this).parent().parent().find(".address").val(),
                 tel: $(this).parent().parent().find(".tel").val()
             }, function(){
-//                alert("修改成功");
+                $("#status").fadeToggle(500).delay(3000).fadeToggle(500);
             });
         });
-    </script>
 {% endblock %}
+</script>
 {% block main %}
     <div class="hero-unit">
+        <div style="display: none;position: fixed;" id="status" class="container alert fade in alert-success">
+            <p >保存成功</p>
+        </div>
+
 
         <h1>
             通讯录
@@ -22,6 +26,7 @@
         <p>
             大家常联系
         </p>
+
         <table class="table table-striped">
             <thead>
             <tr>
