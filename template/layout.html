@@ -7,23 +7,30 @@
     <meta name="description" content="">
     <meta name="author" content="Jared Ye">
 
-<script type="text/javascript">
+    <!-- 谷歌统计 -->
+    <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33362471-1']);
-  _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33362471-1']);
+        _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
-</script>
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F50d1da8ad5dfd6e731df9eee6104038b' type='text/javascript'%3E%3C/script%3E"));
-</script>
+    </script>
+
+
+    <!-- 百度统计 -->
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F50d1da8ad5dfd6e731df9eee6104038b' type='text/javascript'%3E%3C/script%3E"));
+    </script>
 
     <!-- Le styles -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
@@ -78,19 +85,19 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 </div>
 
 {% with messages = get_flashed_messages() %}
-{% if messages %}
-<div class="container alert fade in alert-success" style="display: none;">
-    <div class="row-fluid">
-        <div class="span12">
-            <ul class=flashes>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
+    {% if messages %}
+        <div class="container alert fade in alert-success" style="display: none;">
+            <div class="row-fluid">
+                <div class="span12">
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-{% endif %}
+    {% endif %}
 {% endwith %}
 
 
