@@ -2,22 +2,38 @@
 
 {% block main %}
 
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="span3">
-                    <h1>发班级微博</h1>
-                    <form action="{{ url_for("send_message") }}" method="POST">
-                        要发布到<a href="http://weibo.com/u/2893236202">班级weibo</a>的内容:<input type="text" name="msg">
-                        <input type="submit" class="btn">
-                    </form>
+    <h1>狼人窝</h1>
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div class="btn btn-large">
+                    <img src="{{ url_for('static', filename='img/SINA_LOGO_64x64.png') }}" alt="发班级微博">
                 </div>
-                <div class="offset1 span3 well">
-                    <h2><a href="{{ url_for("contacts.index") }}">狼人通讯录</a></h2>
+                <div class="btn btn-large">
+                    <img src="{{ url_for('static', filename="img/contact.png") }}" alt="通讯录">
+                </div>
+                <div class="btn btn-large">
+                    同学近况
                 </div>
             </div>
         </div>
-
     </div>
+{#    <div>#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="span3">#}
+{#                    <h1>发班级微博</h1>#}
+{#                    <form action="{{ url_for("send_message") }}" method="POST">#}
+{#                        要发布到<a href="http://weibo.com/u/2893236202">班级weibo</a>的内容:<input type="text" name="msg">#}
+{#                        <input type="submit" class="btn">#}
+{#                    </form>#}
+{#                </div>#}
+{#                <div class="offset1 span3 well">#}
+{#                    <h2><a href="{{ url_for("contacts.index") }}">狼人通讯录</a></h2>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
 
 {% endblock %}

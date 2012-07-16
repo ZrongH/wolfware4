@@ -23,9 +23,7 @@ def index():
 
 @app.route('/post', methods = ('POST',))
 def send_message():
-    print '>>>>'
     msg = request.form.get('msg')
-
     return publish.publish(msg) or redirect(url_for("index"))
 
 def register_blueprints():
