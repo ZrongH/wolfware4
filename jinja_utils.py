@@ -2,7 +2,7 @@
 import datetime
 from flask.globals import request
 from flask.helpers import url_for
-from flaskext.login import current_user
+#from flaskext.login import current_user
 
 __author__ = 'yeshiming@gmail.com'
 
@@ -21,9 +21,9 @@ def register_filters(app):
     app.jinja_env.globals['url_for_other_page'] = url_for_other_page
 
     #
-    @app.context_processor
-    def inject_user():
-        return dict(user=current_user)
+#    @app.context_processor
+#    def inject_user():
+#        return dict(user=current_user)
 
 
     @app.template_filter()

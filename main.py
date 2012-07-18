@@ -20,7 +20,7 @@ def index():
     if code:
         Code.objects.delete()
         Code.objects.insert(Code(code = code))
-        return redirect('http://wolfware4.com')
+        return redirect('http://jaredye.info')
     return render_template('index.html', messages = Message.objects())
 
 @app.route('/post', methods = ('POST',))
