@@ -8,7 +8,7 @@ from weibo import APIClient
 
 APP_KEY = '459860685' # app key
 APP_SECRET = 'e5233dd415a086d6152ffbbdf755af42' # app secret
-CALLBACK_URL = 'http://wolfware4.com' # callback url
+CALLBACK_URL = 'http://jaredye.info' # callback url
 
 GET_URL = True
 
