@@ -3,6 +3,8 @@ from flask.globals import request
 from flask.helpers import url_for
 from werkzeug.utils import redirect
 from blueprints.contacts import contacts_bp
+from jinja_utils import register_filters
+from messages import Message
 from models import Code
 import publish
 
@@ -19,7 +21,7 @@ def index():
         Code.objects.delete()
         Code.objects.insert(Code(code = code))
         return redirect('http://wolfware4.com')
-    return render_template('index.html')
+    return render_template('index.html', messages = Message.objects())
 
 @app.route('/post', methods = ('POST',))
 def send_message():
@@ -29,7 +31,13 @@ def send_message():
 def register_blueprints():
     app.register_blueprint(contacts_bp, url_prefix = "/contacts")
 
-register_blueprints()
+@app.route('/post-message', methods = ('POST', ))
+def post_message():
+    content = request.form.get('content')
+    Message.objects.insert(Message(content=content))
+    return redirect(url_for('index'))
 
+register_blueprints()
+register_filters(app)
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True, port=80)
