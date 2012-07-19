@@ -57,8 +57,9 @@
 
                         <form action="{{ url_for("send_message") }}" method="POST">
                             要发布到<a href="http://weibo.com/u/2893236202"><img
-                                src="{{ url_for('static', filename='img/SINA_LOGO_16x16.png') }}" alt="">班级微博</a>的内容:<input type="text" name="msg"
-                                                                                              placeholder="写点八卦呗">
+                                src="{{ url_for('static', filename='img/SINA_LOGO_16x16.png') }}"
+                                alt="">班级微博</a>的内容:<input type="text" name="msg"
+                                                          placeholder="写点八卦呗">
                             <input type="submit" class="btn">
                         </form>
                     </div>
@@ -84,6 +85,11 @@
 
                             </table>
                         </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span3"><h3>代码放置在 <a href="https://github.com/jaredye/wolfware4">github</a>上</h3>
+                        欢迎同学参与班级网站开发
                     </div>
                 </div>
             </div>
