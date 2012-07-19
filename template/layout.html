@@ -78,6 +78,9 @@
                 <ul class="nav">
                     <li><a href="{{ url_for("contacts.index") }}">狼人录</a></li>
                     <li><a href="http://weibo.com/u/2893236202">班级微博</a></li>
+                    <li>
+                        <div id="xc-lang-selector"></div>
+                    </li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -121,6 +124,13 @@
     //提示信息
     $(".alert").hide().slideDown(500).delay(3000).slideUp(500);
 
+</script>
+<script type="text/javascript">
+    var xctServiceName = 'ysmtest3';
+    var xctCurrentDomain = window.location.protocol + "//" + window.location.host;
+    var xctDefaultStyles = true; // set to false to use your own css
+    var xctProt = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cscript src='" + xctProt + "i.xingcloud.com/proxy/language.js?serviceName=" + xctServiceName + "&currentDomain=" + xctCurrentDomain + "' type='text/javascript'%3E%3C/script%3E"));
 </script>
 </body>
 </html>
