@@ -30,36 +30,41 @@
                         <div class="carousel-inner">
                             <div class="item active"><img src="{{ url_for('static', filename='img/psu.jpg') }}" alt="">
                             </div>
-{#                            <div class="item"><img src="{{ url_for('static', filename='img/IMG_1007.JPG') }}"#}
-{#                                                          alt=""></div>#}
-{#                            <div class="item"><img src="{{ url_for('static', filename='img/IMG_1008.JPG') }}" alt="">#}
-{#                            </div>#}
+                            {#                            <div class="item"><img src="{{ url_for('static', filename='img/IMG_1007.JPG') }}"#}
+                            {#                                                          alt=""></div>#}
+                            {#                            <div class="item"><img src="{{ url_for('static', filename='img/IMG_1008.JPG') }}" alt="">#}
+                            {#                            </div>#}
                         </div>
                         <!-- Carousel nav -->
                         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
                     </div>
-{#                    <div class="btn btn-large">#}
-{#                        <img src="{{ url_for('static', filename='img/SINA_LOGO_64x64.png') }}" alt="发班级微博">#}
-{#                    </div>#}
-{#                    <div class="btn btn-large">#}
-{#                        <img src="{{ url_for('static', filename="img/contact.png") }}" alt="通讯录">#}
-{#                    </div>#}
+                    {#                    <div class="btn btn-large">#}
+                    {#                        <img src="{{ url_for('static', filename='img/SINA_LOGO_64x64.png') }}" alt="发班级微博">#}
+                    {#                    </div>#}
+                    {#                    <div class="btn btn-large">#}
+                    {#                        <img src="{{ url_for('static', filename="img/contact.png") }}" alt="通讯录">#}
+                    {#                    </div>#}
                 </div>
             </div>
             <div class="span3 well">
                 <div class="row">
                     <div class="span3">
                         <h1>发班级微博</h1>
-                        <p>欢迎同学和朋友关注<a href="http://weibo.com/u/2893236202">微博</a></p>
+
+                        <p>欢迎同学和班级外的朋友关注<a href="http://weibo.com/u/2893236202"><img
+                                src="{{ url_for('static', filename='img/SINA_LOGO_16x16.png') }}" alt="">班级微博</a></p>
+
                         <form action="{{ url_for("send_message") }}" method="POST">
-                            要发布到<a href="http://weibo.com/u/2893236202">班级weibo</a>的内容:<input type="text" name="msg">
+                            要发布到<a href="http://weibo.com/u/2893236202"><img
+                                src="{{ url_for('static', filename='img/SINA_LOGO_16x16.png') }}" alt="">班级微博</a>的内容:<input type="text" name="msg"
+                                                                                              placeholder="写点八卦呗">
                             <input type="submit" class="btn">
                         </form>
                     </div>
-{#                    <div class="offset1 span3 well">#}
-{#                        <h2><a href="{{ url_for("contacts.index") }}">狼人通讯录</a></h2>#}
-{#                    </div>#}
+                    {#                    <div class="offset1 span3 well">#}
+                    {#                        <h2><a href="{{ url_for("contacts.index") }}">狼人通讯录</a></h2>#}
+                    {#                    </div>#}
                 </div>
                 <div class="row">
                     <div class="span3">
