@@ -8,6 +8,7 @@ from flask.blueprints import Blueprint
 from flask.globals import current_app, request
 from flask.helpers import jsonify
 from flask.templating import render_template
+from mongoengine.queryset import Q
 from models import User
 
 __author__ = 'yeshiming@gmail.com'
@@ -15,18 +16,21 @@ __author__ = 'yeshiming@gmail.com'
 app = current_app
 contacts_bp = Blueprint('contacts', __name__, template_folder='templates')
 
-@contacts_bp.route('/', methods = ['GET'])
+@contacts_bp.route('/', methods=['GET'])
 def index():
-    return render_template('contact.html', users =User.objects().order_by('+student_id'))
+    return render_template('contact.html',
+        users=User.objects().order_by('+student_id'),
+#        users_with_no_contact = User.objects(Q(tel__exists = False) | Q(tel = "")).order_by('+student_id')
+    )
 
 
-@contacts_bp.route('/', methods = ['POST'])
+@contacts_bp.route('/', methods=['POST'])
 def edit():
     user_id = request.form.get('id')
     address = request.form.get('address')
     tel = request.form.get('tel')
-    user = User.objects.get(id = user_id)
+    user = User.objects.get(id=user_id)
     user.address = address
     user.tel = tel
     user.save()
-    return jsonify({'ok':True})
+    return jsonify({'ok': True})

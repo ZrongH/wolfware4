@@ -17,6 +17,8 @@ class User(Document):
     student_id = IntField()
     address = StringField()
     tel = StringField()
+    qq = StringField()
+    email = StringField()
 
 def get_unicode(str):
     if isinstance(str, unicode):
