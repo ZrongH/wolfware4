@@ -55,20 +55,20 @@
                         <h2>发班级微博暂时取消</h2>
                         由于新浪微博账户授权每两天需要人工更新，而且此功能并不频繁使用，所以在做出更好的解决方法之前，此功能暂时取消。
                     </div>
-{#                    <div class="span3">#}
-{#                        <h1>发班级微博</h1>#}
-{##}
-{#                        <p>欢迎同学和班级外的朋友关注<a href="http://weibo.com/u/2893236202"><img#}
-{#                                src="{{ url_for('static', filename='img/SINA_LOGO_16x16.png') }}" alt="">班级微博</a></p>#}
-{##}
-{#                        <form action="{{ url_for("send_message") }}" method="POST">#}
-{#                            要发布到<a href="http://weibo.com/u/2893236202"><img#}
-{#                                src="{{ url_for('static', filename='img/SINA_LOGO_16x16.png') }}"#}
-{#                                alt="">班级微博</a>的内容:<input type="text" name="msg"#}
-{#                                                          placeholder="写点八卦呗">#}
-{#                            <input type="submit" class="btn">#}
-{#                        </form>#}
-{#                    </div>#}
+                    {#                    <div class="span3">#}
+                    {#                        <h1>发班级微博</h1>#}
+                    {##}
+                    {#                        <p>欢迎同学和班级外的朋友关注<a href="http://weibo.com/u/2893236202"><img#}
+                    {#                                src="{{ url_for('static', filename='img/SINA_LOGO_16x16.png') }}" alt="">班级微博</a></p>#}
+                    {##}
+                    {#                        <form action="{{ url_for("send_message") }}" method="POST">#}
+                    {#                            要发布到<a href="http://weibo.com/u/2893236202"><img#}
+                    {#                                src="{{ url_for('static', filename='img/SINA_LOGO_16x16.png') }}"#}
+                    {#                                alt="">班级微博</a>的内容:<input type="text" name="msg"#}
+                    {#                                                          placeholder="写点八卦呗">#}
+                    {#                            <input type="submit" class="btn">#}
+                    {#                        </form>#}
+                    {#                    </div>#}
                     {#                    <div class="offset1 span3 well">#}
                     {#                        <h2><a href="{{ url_for("contacts.index") }}">狼人通讯录</a></h2>#}
                     {#                    </div>#}
@@ -76,28 +76,28 @@
                 <div class="row">
                     <div class="span3">
                         <form action="{{ url_for('post_message') }}" method="POST">
-{#                            <table class="table" style="max-width: 100px;">#}
-                                {% for message in messages %}
-{#                                    <tr>#}
-{#                                        <td>#}
-                                    <p>
-                                            {{ message.publish_date | timesince }}:{{ message.content }}
-{#                                        </td>#}
-{#                                    </tr>#}
-                                    </p>
+                            {#                            <table class="table" style="max-width: 100px;">#}
+                            {% for message in messages %}
+                                {#                                    <tr>#}
+                                {#                                        <td>#}
+                                <p>
+                                    {{ message.publish_date | timesince }}:{{ message.content }}
+                                    {#                                        </td>#}
+                                    {#                                    </tr>#}
+                                </p>
 
-                                {% endfor %}
-{#                                <tr>#}
-{#                                    <td>#}
+                            {% endfor %}
+                            {#                                <tr>#}
+                            {#                                    <td>#}
                             <p>
-                                        <input type="text" placeholder="写下你对班级网站的建议哈" name="content"><input
-                                            type="submit"
-                                            class="btn btn-primary">
+                                <input type="text" placeholder="写下你对班级网站的建议哈" name="content"><input
+                                    type="submit"
+                                    class="btn btn-primary">
                             </p>
-{#                                    </td>#}
-{#                                </tr>#}
-{##}
-{#                            </table>#}
+                            {#                                    </td>#}
+                            {#                                </tr>#}
+                            {##}
+                            {#                            </table>#}
                         </form>
                     </div>
                 </div>
@@ -105,6 +105,10 @@
                     <div class="span3"><h3>代码放置在 <a href="https://github.com/jaredye/wolfware4">github</a>上</h3>
                         欢迎同学参与班级网站开发。请联系 <a href="http://jaredye.info">Jared Ye</a>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="span3"><h3>个人主页</h3>如果你希望把个人主页放置在 <strong>yourname.wolfware4.com</strong> 上请联系 <a
+                            href="http://jaredye.info">Jared Ye</a></div>
                 </div>
             </div>
         </div>
